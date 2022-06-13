@@ -1,3 +1,5 @@
+import './style.css';
+
 const tasks = [
   {
     description: 'do task #1',
