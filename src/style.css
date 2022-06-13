@@ -104,3 +104,20 @@ button:active {
   color: rgba(0 0 0 / 100%);
 }
 
+#clear-completed {
+  font-size: 14px;
+  padding: 18px 0;
+}
+
+#clear-completed:hover {
+  text-decoration: underline;
+}
+
+#clear-completed:active {
+  text-decoration: underline;
+}
+
+#clear-completed:focus {
+  color: rgba(0 0 0 / 100%);
+  text-decoration: underline;
+}
