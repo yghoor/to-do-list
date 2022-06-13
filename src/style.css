@@ -5,3 +5,11 @@ body {
   justify-content: center;
 }
 
+#to-do-list {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 400px;
+  box-shadow: 0 0.5rem 8px 10px rgba(0 0 0 / 3%);
+}
+
