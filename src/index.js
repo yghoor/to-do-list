@@ -22,3 +22,19 @@ const tasks = [
 ];
 
 const listItems = document.getElementById('list-items');
+
+function displayItems(tasksArr) {
+  tasksArr.forEach((task) => {
+    const item = document.createElement('li');
+    item.id = `item-${task.index}`;
+    item.classList.add(`${task.completed}`);
+
+    item.innerHTML = `
+      <input type="checkbox">
+      <span>${task.description}</span>
+      <button type="button">&#8942;</button>`;
+
+    listItems.appendChild(item);
+  });
+}
+
