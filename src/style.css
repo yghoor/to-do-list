@@ -13,3 +13,12 @@ body {
   box-shadow: 0 0.5rem 8px 10px rgba(0 0 0 / 3%);
 }
 
+h2 {
+  padding: 0 14px;
+  margin: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 400;
+}
+
