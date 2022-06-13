@@ -20,3 +20,5 @@ const tasks = [
     index: 3,
   },
 ];
+
+const listItems = document.getElementById('list-items');
