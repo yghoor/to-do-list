@@ -82,3 +82,9 @@ li input:checked::after {
   color: #4187d5;
 }
 
+button {
+  cursor: pointer;
+  color: rgba(0 0 0 / 40%);
+  border: none;
+}
+
