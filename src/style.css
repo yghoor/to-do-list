@@ -96,3 +96,11 @@ li button {
   background: none;
 }
 
+button:hover {
+  color: rgba(0 0 0 / 100%);
+}
+
+button:active {
+  color: rgba(0 0 0 / 100%);
+}
+
