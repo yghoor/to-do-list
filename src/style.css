@@ -22,3 +22,11 @@ h2 {
   font-weight: 400;
 }
 
+.reload {
+  padding: 0;
+  margin-left: auto;
+  color: rgba(0 0 0 / 60%);
+  font-size: 18px;
+  background: none;
+}
+
