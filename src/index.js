@@ -38,3 +38,4 @@ function displayItems(tasksArr) {
   });
 }
 
+displayItems(tasks);
