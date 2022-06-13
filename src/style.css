@@ -36,3 +36,9 @@ h2 {
   border-top: 1px solid rgba(0 0 0 / 15%);
 }
 
+#item-input {
+  font-size: 14px;
+  font-style: italic;
+  border: none;
+}
+
