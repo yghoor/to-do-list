@@ -37,6 +37,13 @@ function displayItems(tasksArr) {
       <button type="button">&#8942;</button>`;
 
     itemsList.appendChild(item);
+
+    if (isCompleted(task) === 'done') {
+      item.children[1].classList.add('done');
+    } else {
+      item.children[1].classList.remove('done');
+    }
+
   });
 }
 
