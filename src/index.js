@@ -23,6 +23,7 @@ function displayItems(tasksArr) {
 
     if (isCompleted(task) === 'done') {
       item.children[1].classList.add('done');
+      item.children[0].checked = true;
     } else {
       item.children[1].classList.remove('done');
     }
