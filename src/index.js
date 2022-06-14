@@ -30,7 +30,6 @@ function displayItems(tasksArr) {
   tasksArr.forEach((task) => {
     const item = document.createElement('li');
     item.id = `item-${task.index}`;
-    item.classList.add(`${task.completed}`);
 
     item.innerHTML = `
       <input type="checkbox">
