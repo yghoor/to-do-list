@@ -5,3 +5,11 @@ export function setCompleted(task) {
     task.completed = false;
   }
 }
+
+export function isCompleted(task) {
+  if (task.completed === true) {
+    return 'done';
+  }
+
+  return 'not-done';
+}
