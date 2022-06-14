@@ -50,6 +50,7 @@ function displayItems(tasksArr) {
 
     item.children[0].addEventListener('change', () => {
       setCompleted(task);
+      saveTasksToLocalStorage();
 
       if (isCompleted(task) === 'done') {
         item.children[1].classList.add('done');
