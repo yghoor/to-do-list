@@ -44,6 +44,15 @@ function displayItems(tasksArr) {
       item.children[1].classList.remove('done');
     }
 
+    item.children[0].addEventListener('change', () => {
+      setCompleted(task);
+
+      if (isCompleted(task) === 'done') {
+        item.children[1].classList.add('done');
+      } else {
+        item.children[1].classList.remove('done');
+      }
+    });
   });
 }
 
