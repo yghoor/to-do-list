@@ -21,21 +21,24 @@ function displayItems(tasksArr) {
 
     itemsList.appendChild(item);
 
+    const itemText = item.children[1];
+    const itemCheckbox = item.children[0];
+
     if (isCompleted(task) === 'done') {
-      item.children[1].classList.add('done');
-      item.children[0].checked = true;
+      itemText.classList.add('done');
+      itemCheckbox.checked = true;
     } else {
-      item.children[1].classList.remove('done');
+      itemText.classList.remove('done');
     }
 
-    item.children[0].addEventListener('change', () => {
+    itemCheckbox.addEventListener('change', () => {
       setCompleted(task);
       saveTasksToLocalStorage();
 
       if (isCompleted(task) === 'done') {
-        item.children[1].classList.add('done');
+        itemText.classList.add('done');
       } else {
-        item.children[1].classList.remove('done');
+        itemText.classList.remove('done');
       }
     });
   });
