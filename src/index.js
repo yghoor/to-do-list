@@ -24,7 +24,7 @@ const tasks = [
   },
 ];
 
-const listItems = document.getElementById('list-items');
+const itemsList = document.getElementById('list-items');
 
 function displayItems(tasksArr) {
   tasksArr.forEach((task) => {
@@ -37,7 +37,7 @@ function displayItems(tasksArr) {
       <span>${task.description}</span>
       <button type="button">&#8942;</button>`;
 
-    listItems.appendChild(item);
+    itemsList.appendChild(item);
   });
 }
 
