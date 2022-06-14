@@ -126,3 +126,7 @@ button:active {
   color: rgba(0 0 0 / 100%);
   text-decoration: underline;
 }
+
+.done {
+  text-decoration: line-through;
+}
