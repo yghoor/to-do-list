@@ -68,7 +68,7 @@ li {
   border-top: 1px solid rgba(0 0 0 / 15%);
 }
 
-li input {
+li input[type="checkbox"] {
   appearance: none;
   background-color: #fff;
   border: 3px solid #cacece;
@@ -76,12 +76,12 @@ li input {
   padding: 9px;
 }
 
-li input:checked {
+li input[type="checkbox"]:checked {
   padding: 0.01rem 0.23rem;
   border: none;
 }
 
-li input:checked::after {
+li input[type="checkbox"]:checked::after {
   content: "\2714";
   font-size: 20px;
   color: #4187d5;
