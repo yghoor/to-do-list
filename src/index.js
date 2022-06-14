@@ -1,4 +1,5 @@
 import './style.css';
+import { setCompleted, isCompleted } from './completed.js';
 
 const tasks = [
   {
