@@ -24,6 +24,10 @@ const tasks = [
   },
 ];
 
+function saveTasksToLocalStorage() {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
 const itemsList = document.getElementById('list-items');
 
 function displayItems(tasksArr) {
