@@ -43,6 +43,10 @@ h2 {
   width: 90%;
 }
 
+#item-input:focus {
+  outline: none;
+}
+
 .enter-button {
   background-color: #fff;
   margin-left: auto;
