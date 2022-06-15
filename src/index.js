@@ -41,5 +41,7 @@ function displayItems(tasksArr) {
   });
 }
 
-saveTasksToLocalStorage();
-displayItems(tasks);
+if (inspectLocalStorage()) {
+  tasks = JSON.parse(localStorage.getItem('tasks'));
+  displayItems(tasks);
+}
