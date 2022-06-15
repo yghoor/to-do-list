@@ -71,6 +71,12 @@ enterButton.addEventListener('click', () => {
   itemInput.value = '';
 });
 
+itemInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    enterButton.click();
+  }
+});
+
 if (inspectLocalStorage()) {
   tasks = JSON.parse(localStorage.getItem('tasks'));
   displayItems(tasks);
