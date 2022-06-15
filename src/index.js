@@ -55,6 +55,12 @@ function displayItems(tasksArray) {
   });
 }
 
+function refreshItemsList() {
+  tasks = JSON.parse(localStorage.getItem('tasks'));
+  itemsList.innerHTML = '';
+  displayItems(tasks);
+}
+
 if (inspectLocalStorage()) {
   tasks = JSON.parse(localStorage.getItem('tasks'));
   displayItems(tasks);
