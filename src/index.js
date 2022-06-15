@@ -17,7 +17,7 @@ function displayItems(tasksArray) {
     item.innerHTML = `
       <input type="checkbox">
       <span>${task.description}</span>
-      <button type="button">&#8942;</button>`;
+      <button type="button" id="menu-btn">&#8942;</button>
 
     itemsList.appendChild(item);
 
