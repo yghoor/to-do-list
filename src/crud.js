@@ -1,3 +1,5 @@
+import { saveTasksToLocalStorage } from './local-storage.js';
+
 export function addTask(tasksArray, currentItemInput) {
   tasksArray.push({
     description: currentItemInput,
