@@ -61,6 +61,16 @@ function refreshItemsList() {
   displayItems(tasks);
 }
 
+const itemInput = document.getElementById('item-input');
+const enterButton = document.querySelector('.enter-button');
+
+enterButton.addEventListener('click', () => {
+  addTask(tasks, itemInput.value);
+  saveTasksToLocalStorage(tasks);
+  refreshItemsList();
+  itemInput.value = '';
+});
+
 if (inspectLocalStorage()) {
   tasks = JSON.parse(localStorage.getItem('tasks'));
   displayItems(tasks);
