@@ -63,8 +63,7 @@ ul {
 li {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 14px 3px 14px 10px;
+  padding: 0 3px 0 10px;
   border-top: 1px solid rgba(0 0 0 / 15%);
 }
 
