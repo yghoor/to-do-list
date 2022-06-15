@@ -1,5 +1,8 @@
 import './style.css';
 import { setCompleted, isCompleted } from './completed.js';
+import {
+  addTask, removeTask, addInputEditor, clearCompletedTasks,
+} from './crud.js';
 import { saveTasksToLocalStorage, inspectLocalStorage } from './local-storage.js';
 
 const tasks = [];
