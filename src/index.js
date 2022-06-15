@@ -9,8 +9,8 @@ let tasks = [];
 
 const itemsList = document.getElementById('list-items');
 
-function displayItems(tasksArr) {
-  tasksArr.forEach((task) => {
+function displayItems(tasksArray) {
+  tasksArray.forEach((task) => {
     const item = document.createElement('li');
     item.id = `item-${task.index}`;
 
@@ -33,7 +33,7 @@ function displayItems(tasksArr) {
 
     itemCheckbox.addEventListener('change', () => {
       setCompleted(task);
-      saveTasksToLocalStorage();
+      saveTasksToLocalStorage(tasksArray);
 
       if (isCompleted(task) === 'done') {
         itemText.classList.add('done');
