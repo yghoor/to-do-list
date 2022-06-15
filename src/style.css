@@ -131,6 +131,10 @@ button:active {
   text-decoration: line-through;
 }
 
+.bg-yellow {
+  background-color: #ffffc9;
+}
+
 .hidden {
   display: none;
 }
