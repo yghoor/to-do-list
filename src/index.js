@@ -1,5 +1,6 @@
 import './style.css';
 import { setCompleted, isCompleted } from './completed.js';
+import { saveTasksToLocalStorage, inspectLocalStorage } from './local-storage.js';
 
 const tasks = [];
 
