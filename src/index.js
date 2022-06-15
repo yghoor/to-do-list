@@ -5,7 +5,7 @@ import {
 } from './crud.js';
 import { saveTasksToLocalStorage, inspectLocalStorage } from './local-storage.js';
 
-const tasks = [];
+let tasks = [];
 
 const itemsList = document.getElementById('list-items');
 
