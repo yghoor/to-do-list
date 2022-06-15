@@ -42,6 +42,14 @@ function displayItems(tasksArray) {
         itemText.classList.remove('done');
       }
     });
+
+    const deleteButton = item.children[3];
+
+    deleteButton.addEventListener('click', () => {
+      removeTask(task, tasksArray);
+      // eslint-disable-next-line no-use-before-define
+      refreshItemsList();
+    });
   });
 }
 
