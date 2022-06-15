@@ -6,6 +6,13 @@ export function addTask(tasksArray, currentItemInput) {
   });
 }
 
+export function renumberTaskIndexes(tasksArray) {
+  tasksArray.forEach((task, taskNum) => {
+    task.index = taskNum + 1;
+  });
+  saveTasksToLocalStorage(tasksArray);
+}
+
 export function addInputEditor(task, tasksArray) {
   const currentItem = document.getElementById(`item-${task.index}`);
   const currentItemText = currentItem.children[1];
