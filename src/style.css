@@ -73,6 +73,7 @@ li input[type="checkbox"] {
   border: 3px solid #cacece;
   border-radius: 3px;
   padding: 9px;
+  margin: 14px 14px 14px 10px;
 }
 
 li input[type="checkbox"]:checked {
