@@ -131,6 +131,14 @@ button:active {
   text-decoration: line-through;
 }
 
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: block;
+}
+
 .gg-trash {
   box-sizing: border-box;
   position: relative;
