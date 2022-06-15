@@ -13,6 +13,19 @@ export function renumberTaskIndexes(tasksArray) {
   saveTasksToLocalStorage(tasksArray);
 }
 
+const itemsList = document.getElementById('list-items');
+
+export function removeTask(task, tasksArray) {
+  const currentItem = document.getElementById(`item-${task.index}`);
+  itemsList.removeChild(currentItem);
+
+  const taskIndex = task.index - 1;
+
+  tasksArray.splice(taskIndex, 1);
+
+  renumberTaskIndexes(tasksArray);
+}
+
 export function addInputEditor(task, tasksArray) {
   const currentItem = document.getElementById(`item-${task.index}`);
   const currentItemText = currentItem.children[1];
