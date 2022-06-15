@@ -88,3 +88,8 @@ export function addInputEditor(task, tasksArray) {
     });
   });
 }
+
+export function clearCompletedTasks(tasksArray) {
+  tasksArray = tasksArray.filter((task) => task.completed === false);
+  renumberTaskIndexes(tasksArray);
+}
