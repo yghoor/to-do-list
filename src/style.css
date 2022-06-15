@@ -107,8 +107,12 @@ button {
 
 #delete-btn {
   padding: 14px 14px 14px 0;
-  margin-left: auto;
-  background: none;
+}
+
+button {
+  cursor: pointer;
+  color: rgba(0 0 0 / 40%);
+  border: none;
 }
 
 button:hover {
