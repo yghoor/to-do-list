@@ -50,6 +50,8 @@ function displayItems(tasksArray) {
       // eslint-disable-next-line no-use-before-define
       refreshItemsList();
     });
+
+    addInputEditor(task, tasksArray);
   });
 }
 
