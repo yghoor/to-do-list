@@ -77,6 +77,13 @@ itemInput.addEventListener('keypress', (event) => {
   }
 });
 
+const clearButton = document.getElementById('clear-completed');
+
+clearButton.addEventListener('click', () => {
+  clearCompletedTasks(tasks);
+  refreshItemsList();
+});
+
 if (inspectLocalStorage()) {
   tasks = JSON.parse(localStorage.getItem('tasks'));
   displayItems(tasks);
