@@ -17,8 +17,8 @@ function displayItems(tasksArray) {
     item.innerHTML = `
       <input type="checkbox">
       <span>${task.description}</span>
-      <button type="button" id="menu-btn">&#8942;</button>
-      <button type="button" id="delete-btn" class="hidden"><i class="gg-trash"></i></button>`;
+      <button type="button" class="menu-btn">&#8942;</button>
+      <button type="button" class="delete-btn hidden"><i class="gg-trash"></i></button>`;
 
     itemsList.appendChild(item);
 
