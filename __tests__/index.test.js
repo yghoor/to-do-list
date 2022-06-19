@@ -87,3 +87,9 @@ function refreshItemsList() {
   displayItems(tasks);
 }
 
+enterButton.addEventListener('click', () => {
+  addTask(tasks, itemInput);
+  saveToStorage(tasks);
+  refreshItemsList();
+});
+
