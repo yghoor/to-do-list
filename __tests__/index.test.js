@@ -127,3 +127,38 @@ describe('task addition tests', () => {
   });
 });
 
+describe('task removal tests', () => {
+  test('task is removed from page after click', () => {
+    const item = document.getElementById('item-4');
+    const deleteButton = item.children[3];
+
+    deleteButton.click();
+
+    expect(itemsList.childElementCount).toBe(3);
+    expect(document.getElementById('item-4')).toBeNull();
+  });
+
+  test('task is removed from array after click', () => {
+    const expectedTask = [
+      {
+        index: 4,
+        description: itemInput,
+        completed: false,
+      },
+    ];
+
+    expect(tasks).not.toEqual(expect.arrayContaining(expectedTask));
+  });
+
+  test('task is removed from storage after click', () => {
+    const expectedStorage = [
+      {
+        index: 4,
+        description: 'Item-4',
+        completed: false,
+      },
+    ];
+
+    expect(storage).not.toEqual(expect.arrayContaining(expectedStorage));
+  });
+});
