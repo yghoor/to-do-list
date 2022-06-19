@@ -71,23 +71,6 @@ export function addInputEditor(task, tasksArray) {
         currentItemText.textContent = `${taskEditor.value}`;
       }
     });
-
-    taskEditor.addEventListener('blur', () => {
-      task.description = `${taskEditor.value}`;
-
-      if (taskEditor.value === '') {
-        removeTask(task, tasksArray);
-      }
-
-      saveTasksToLocalStorage(tasksArray);
-
-      menuButton.classList.remove('hidden');
-      deleteButton.classList.add('hidden');
-      deleteButton.classList.remove('shown');
-      currentItem.classList.remove('bg-yellow');
-
-      currentItemText.textContent = `${taskEditor.value}`;
-    });
   });
 }
 
