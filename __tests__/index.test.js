@@ -93,3 +93,37 @@ enterButton.addEventListener('click', () => {
   refreshItemsList();
 });
 
+describe('task addition tests', () => {
+  test('task is added to page after click', () => {
+    enterButton.click();
+
+    const itemText = document.getElementById('item-4').children[1].textContent;
+
+    expect(itemText).toEqual(itemInput);
+  });
+
+  test('task is added to array after click', () => {
+    const expectedTasks = [
+      {
+        index: 4,
+        description: itemInput,
+        completed: false,
+      },
+    ];
+
+    expect(tasks).toEqual(expect.arrayContaining(expectedTasks));
+  });
+
+  test('task is added to storage after click', () => {
+    const expectedStorage = [
+      {
+        index: 4,
+        description: itemInput,
+        completed: false,
+      },
+    ];
+
+    expect(storage).toEqual(expect.arrayContaining(expectedStorage));
+  });
+});
+
