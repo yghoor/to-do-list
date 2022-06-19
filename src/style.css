@@ -107,19 +107,19 @@ li span {
   background-color: inherit;
 }
 
-#menu-btn,
-#delete-btn {
+.menu-btn,
+.delete-btn {
   font-size: 16px;
   font-weight: 1000;
   background-color: inherit;
 }
 
-#menu-btn {
+.menu-btn {
   padding: 14px 6px 14px 0;
   cursor: move;
 }
 
-#delete-btn {
+.delete-btn {
   padding: 14px 14px 14px 0;
 }
 
