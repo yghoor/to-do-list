@@ -34,3 +34,8 @@ let tasks = [
 let storage = [];
 
 const itemInput = 'Task-4';
+
+function saveToStorage(tasksArray) {
+  storage = tasksArray;
+}
+
