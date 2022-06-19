@@ -46,3 +46,14 @@ function renumberTaskIndexes(tasksArray) {
   saveToStorage(tasksArray);
 }
 
+function removeTask(task, tasksArray) {
+  const currentItem = document.getElementById(`item-${task.index}`);
+  itemsList.removeChild(currentItem);
+
+  const taskIndex = task.index - 1;
+
+  tasksArray.splice(taskIndex, 1);
+
+  renumberTaskIndexes(tasksArray);
+}
+
