@@ -80,3 +80,10 @@ function displayItems(tasksArray) {
     });
   });
 }
+
+function refreshItemsList() {
+  tasks = storage;
+  itemsList.innerHTML = '';
+  displayItems(tasks);
+}
+
