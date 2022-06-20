@@ -55,3 +55,34 @@ function removeTask(task, tasksArray) {
   renumberTaskIndexes(tasksArray);
 }
 
+function addInputEditor(task, tasksArray) {
+  const currentItem = document.getElementById(`item-${task.index}`);
+  const currentItemText = currentItem.children[1];
+
+  currentItemText.addEventListener('click', () => {
+    const taskEditor = document.createElement('input');
+    taskEditor.type = 'text';
+    taskEditor.value = task.description;
+
+    if (currentItemText.innerHTML === task.description) {
+      currentItemText.innerHTML = '';
+      currentItemText.appendChild(taskEditor);
+    }
+
+    taskEditor.focus();
+
+    taskEditor.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        task.description = `${taskEditor.value}`;
+
+        if (taskEditor.value === '') {
+          removeTask(task, tasksArray);
+        }
+
+        saveToStorage(tasksArray);
+
+        currentItemText.textContent = `${taskEditor.value}`;
+      }
+    });
+  });
+}
