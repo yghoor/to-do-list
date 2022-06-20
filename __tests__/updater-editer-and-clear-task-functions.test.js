@@ -29,6 +29,16 @@ let tasks = [
     completed: false,
     index: 3,
   },
+  {
+    description: 'Task 4',
+    completed: false,
+    index: 4,
+  },
+  {
+    description: 'Task 5',
+    completed: false,
+    index: 5,
+  },
 ];
 
 let storage = [];
