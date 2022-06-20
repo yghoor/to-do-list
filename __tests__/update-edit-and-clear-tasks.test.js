@@ -31,3 +31,5 @@ const tasks = [
   },
 ];
 
+let storage = [];
+
