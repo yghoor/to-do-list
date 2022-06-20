@@ -13,7 +13,7 @@ document.body.innerHTML = `
 
 const itemsList = document.getElementById('list-items');
 
-const tasks = [
+let tasks = [
   {
     description: 'Task 1',
     completed: false,
@@ -107,6 +107,12 @@ function displayItems(tasksArray) {
 
     addInputEditor(task, tasksArray);
   });
+}
+
+function refreshItemsList() {
+  tasks = storage;
+  itemsList.innerHTML = '';
+  displayItems(tasks);
 }
 
 displayItems(tasks);
