@@ -13,3 +13,21 @@ document.body.innerHTML = `
 
 const itemsList = document.getElementById('list-items');
 
+const tasks = [
+  {
+    description: 'Task 1',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'Task 2',
+    completed: false,
+    index: 2,
+  },
+  {
+    description: 'Task 3',
+    completed: false,
+    index: 3,
+  },
+];
+
