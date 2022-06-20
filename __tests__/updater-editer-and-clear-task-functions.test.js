@@ -3,7 +3,6 @@
  */
 
 import { setCompleted } from '../src/completed.js';
-import { clearCompletedTasks } from '../src/crud.js';
 
 document.body.innerHTML = `
   <div class="add-item">
@@ -123,6 +122,11 @@ function refreshItemsList() {
   tasks = storage;
   itemsList.innerHTML = '';
   displayItems(tasks);
+}
+
+function clearCompletedTasks(tasksArray) {
+  tasksArray = tasksArray.filter((task) => task.completed === false);
+  renumberTaskIndexes(tasksArray);
 }
 
 displayItems(tasks);
