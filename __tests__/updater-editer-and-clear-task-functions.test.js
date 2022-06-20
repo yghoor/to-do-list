@@ -187,7 +187,7 @@ describe('task description editor', () => {
       itemText.children[0].value = '';
       itemText.children[0].blur();
 
-      expect(itemsList.childElementCount).toBe(2);
+      expect(itemsList.childElementCount).toBe(4);
       expect(document.getElementById('item-2')).toBeNull();
     });
 
@@ -201,7 +201,7 @@ describe('task description editor', () => {
       ];
 
       expect(tasks).not.toEqual(expect.arrayContaining(expectedTask));
-      expect(tasks.length).toBe(2);
+      expect(tasks.length).toBe(4);
     });
 
     test('element is removed from storage', () => {
@@ -214,7 +214,7 @@ describe('task description editor', () => {
       ];
 
       expect(storage).not.toEqual(expect.arrayContaining(expectedStorage));
-      expect(storage.length).toBe(2);
+      expect(storage.length).toBe(4);
     });
   });
 });
