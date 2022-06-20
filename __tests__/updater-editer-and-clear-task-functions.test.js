@@ -100,10 +100,6 @@ function displayItems(tasksArray) {
 
     const itemCheckbox = item.children[0];
 
-    if (isCompleted(task) === 'done') {
-      itemCheckbox.checked = true;
-    }
-
     itemCheckbox.addEventListener('change', () => {
       setCompleted(task);
       saveToStorage(tasksArray);
