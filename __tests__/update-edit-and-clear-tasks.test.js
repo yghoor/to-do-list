@@ -33,3 +33,7 @@ const tasks = [
 
 let storage = [];
 
+function saveToStorage(tasksArray) {
+  storage = tasksArray;
+}
+
