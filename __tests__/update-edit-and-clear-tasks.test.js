@@ -86,3 +86,31 @@ function addInputEditor(task, tasksArray) {
     });
   });
 }
+
+function displayItems(tasksArray) {
+  tasksArray.forEach((task) => {
+    const item = document.createElement('li');
+    item.id = `item-${task.index}`;
+
+    item.innerHTML = `
+      <input type="checkbox">
+      <span>${task.description}</span>
+      <button type="button" class="menu-btn">&#8942;</button>
+      <button type="button" class="delete-btn hidden"><i class="gg-trash"></i></button>`;
+
+    itemsList.appendChild(item);
+
+    const itemCheckbox = item.children[0];
+
+    if (isCompleted(task) === 'done') {
+      itemCheckbox.checked = true;
+    }
+
+    itemCheckbox.addEventListener('change', () => {
+      setCompleted(task);
+      saveToStorage(tasksArray);
+    });
+
+    addInputEditor(task, tasksArray);
+  });
+}
