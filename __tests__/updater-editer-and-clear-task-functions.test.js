@@ -112,3 +112,6 @@ function displayItems(tasksArray) {
     addInputEditor(task, tasksArray);
   });
 }
+
+displayItems(tasks);
+
