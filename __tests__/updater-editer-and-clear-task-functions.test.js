@@ -258,3 +258,57 @@ describe('task.completed updater', () => {
     expect(storage[0].completed).toEqual(false);
   });
 });
+
+describe('clear all completed function', () => {
+  test('all completed tasks are removed from page', () => {
+    const item3 = document.getElementById('item-3');
+    const itemCheckbox3 = item3.children[0];
+    itemCheckbox3.click();
+    const item4 = document.getElementById('item-4');
+    const itemCheckbox4 = item4.children[0];
+    itemCheckbox4.click();
+
+    clearCompletedTasks(tasks); // Removes tasks 'Task 4' and 'Task 5' from tasks array
+    refreshItemsList();
+
+    expect(itemsList.childElementCount).toBe(2);
+    expect(document.getElementById('item-3')).toBeNull();
+    expect(document.getElementById('item-4')).toBeNull();
+  });
+
+  test('all completed tasks are removed from tasks array', () => {
+    const expectedRemovedTasks = [
+      {
+        description: 'Task 4',
+        completed: false,
+        index: 4,
+      },
+      {
+        description: 'Task 5',
+        completed: false,
+        index: 5,
+      },
+    ];
+
+    expect(tasks).not.toEqual(expect.arrayContaining(expectedRemovedTasks));
+    expect(tasks.length).toBe(2);
+  });
+
+  test('all completed tasks are removed from storage', () => {
+    const expectedRemovedStorage = [
+      {
+        description: 'Task 4',
+        completed: false,
+        index: 4,
+      },
+      {
+        description: 'Task 5',
+        completed: false,
+        index: 5,
+      },
+    ];
+
+    expect(storage).not.toEqual(expect.arrayContaining(expectedRemovedStorage));
+    expect(storage.length).toBe(2);
+  });
+});
