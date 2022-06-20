@@ -71,18 +71,16 @@ function addInputEditor(task, tasksArray) {
 
     taskEditor.focus();
 
-    taskEditor.addEventListener('keypress', (event) => {
-      if (event.key === 'Enter') {
-        task.description = `${taskEditor.value}`;
+    taskEditor.addEventListener('blur', () => {
+      task.description = `${taskEditor.value}`;
 
-        if (taskEditor.value === '') {
-          removeTask(task, tasksArray);
-        }
-
-        saveToStorage(tasksArray);
-
-        currentItemText.textContent = `${taskEditor.value}`;
+      if (taskEditor.value === '') {
+        removeTask(task, tasksArray);
       }
+
+      saveToStorage(tasksArray);
+
+      currentItemText.textContent = `${taskEditor.value}`;
     });
   });
 }
