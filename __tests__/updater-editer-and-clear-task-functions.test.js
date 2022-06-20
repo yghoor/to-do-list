@@ -115,3 +115,94 @@ function displayItems(tasksArray) {
 
 displayItems(tasks);
 
+describe('task description editor', () => {
+  const item = document.getElementById('item-2');
+  const itemText = item.children[1];
+
+  test('editor input replaces text in span', () => {
+    itemText.click();
+
+    expect(itemText.innerHTML).toEqual('<input type="text">');
+
+    itemText.children[0].blur();
+  });
+
+  test('should display task description in editable input', () => {
+    itemText.click();
+
+    expect(itemText.children[0].value).toEqual('Task 2');
+
+    itemText.children[0].blur();
+  });
+
+  test('editor can edit task description', () => {
+    itemText.click();
+
+    itemText.children[0].value = 'New Task 2';
+    itemText.children[0].blur();
+
+    expect(itemText.innerHTML).toEqual('New Task 2');
+  });
+
+  test('edited description displays in tasks array', () => {
+    const expectedTask = [
+      {
+        index: 2,
+        description: 'New Task 2',
+        completed: false,
+      },
+    ];
+
+    expect(tasks).toEqual(expect.arrayContaining(expectedTask));
+  });
+
+  test('task with edited description is stored in storage array', () => {
+    const expectedStorage = [
+      {
+        index: 2,
+        description: 'New Task 2',
+        completed: false,
+      },
+    ];
+
+    expect(storage).toEqual(expect.arrayContaining(expectedStorage));
+  });
+
+  describe('if description is empty', () => {
+    test('element is removed from page', () => {
+      itemText.click();
+
+      itemText.children[0].value = '';
+      itemText.children[0].blur();
+
+      expect(itemsList.childElementCount).toBe(2);
+      expect(document.getElementById('item-2')).toBeNull();
+    });
+
+    test('element is removed from array', () => {
+      const expectedTask = [
+        {
+          index: 2,
+          description: 'New Task 2',
+          completed: false,
+        },
+      ];
+
+      expect(tasks).not.toEqual(expect.arrayContaining(expectedTask));
+      expect(tasks.length).toBe(2);
+    });
+
+    test('element is removed from storage', () => {
+      const expectedStorage = [
+        {
+          index: 2,
+          description: 'New Task 2',
+          completed: false,
+        },
+      ];
+
+      expect(storage).not.toEqual(expect.arrayContaining(expectedStorage));
+      expect(storage.length).toBe(2);
+    });
+  });
+});
