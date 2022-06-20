@@ -220,10 +220,9 @@ describe('task description editor', () => {
 });
 
 describe('task.completed updater', () => {
-  const item = document.getElementById('item-1');
-  const itemCheckbox = item.children[0];
-
   test('task.completed is set to true in tasks array', () => {
+    const item = document.getElementById('item-1');
+    const itemCheckbox = item.children[0];
     itemCheckbox.click();
 
     expect(tasks[0].completed).toBe(true);
@@ -234,6 +233,8 @@ describe('task.completed updater', () => {
   });
 
   test('task.completed is set to false in tasks array', () => {
+    const item = document.getElementById('item-1');
+    const itemCheckbox = item.children[0];
     itemCheckbox.click();
 
     expect(tasks[0].completed).toEqual(false);
