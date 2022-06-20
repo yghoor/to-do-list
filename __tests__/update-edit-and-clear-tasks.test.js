@@ -37,3 +37,10 @@ function saveToStorage(tasksArray) {
   storage = tasksArray;
 }
 
+function renumberTaskIndexes(tasksArray) {
+  tasksArray.forEach((task, taskNum) => {
+    task.index = taskNum + 1;
+  });
+  saveToStorage(tasksArray);
+}
+
