@@ -202,3 +202,28 @@ describe('task description editor', () => {
     });
   });
 });
+
+describe('task.completed updater', () => {
+  const item = document.getElementById('item-1');
+  const itemCheckbox = item.children[0];
+
+  test('task.completed is set to true in tasks array', () => {
+    itemCheckbox.click();
+
+    expect(tasks[0].completed).toBe(true);
+  });
+
+  test('task.completed is set to true in storage', () => {
+    expect(storage[0].completed).toEqual(true);
+  });
+
+  test('task.completed is set to false in tasks array', () => {
+    itemCheckbox.click();
+
+    expect(tasks[0].completed).toEqual(false);
+  });
+
+  test('task.completed is set to false in storage', () => {
+    expect(storage[0].completed).toEqual(false);
+  });
+});
