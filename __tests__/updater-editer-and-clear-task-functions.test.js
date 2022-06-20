@@ -185,7 +185,7 @@ describe('task description editor', () => {
       itemText.click();
 
       itemText.children[0].value = '';
-      itemText.children[0].blur();
+      itemText.children[0].blur(); // Removes task 'Task 2' from tasks array
 
       expect(itemsList.childElementCount).toBe(4);
       expect(document.getElementById('item-2')).toBeNull();
@@ -215,6 +215,16 @@ describe('task description editor', () => {
 
       expect(storage).not.toEqual(expect.arrayContaining(expectedStorage));
       expect(storage.length).toBe(4);
+    });
+
+    describe('task renumber function', () => {
+      test('task indexes are renumbered', () => {
+        refreshItemsList();
+        expect(document.getElementById('item-1').children[1].innerHTML).toEqual('Task 1');
+        expect(document.getElementById('item-2').children[1].innerHTML).toEqual('Task 3');
+        expect(document.getElementById('item-3').children[1].innerHTML).toEqual('Task 4');
+        expect(document.getElementById('item-4').children[1].innerHTML).toEqual('Task 5');
+      });
     });
   });
 });
