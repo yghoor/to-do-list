@@ -1,4 +1,5 @@
 import './style.css';
+import { setCompleted, isCompleted } from './completed.js';
 
 const tasks = [
   {
@@ -23,21 +24,42 @@ const tasks = [
   },
 ];
 
-const listItems = document.getElementById('list-items');
+function saveTasksToLocalStorage() {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+const itemsList = document.getElementById('list-items');
 
 function displayItems(tasksArr) {
   tasksArr.forEach((task) => {
     const item = document.createElement('li');
     item.id = `item-${task.index}`;
-    item.classList.add(`${task.completed}`);
 
     item.innerHTML = `
       <input type="checkbox">
       <span>${task.description}</span>
       <button type="button">&#8942;</button>`;
 
-    listItems.appendChild(item);
+    itemsList.appendChild(item);
+
+    if (isCompleted(task) === 'done') {
+      item.children[1].classList.add('done');
+    } else {
+      item.children[1].classList.remove('done');
+    }
+
+    item.children[0].addEventListener('change', () => {
+      setCompleted(task);
+      saveTasksToLocalStorage();
+
+      if (isCompleted(task) === 'done') {
+        item.children[1].classList.add('done');
+      } else {
+        item.children[1].classList.remove('done');
+      }
+    });
   });
 }
 
+saveTasksToLocalStorage();
 displayItems(tasks);

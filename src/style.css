@@ -40,6 +40,11 @@ h2 {
   font-size: 14px;
   font-style: italic;
   border: none;
+  width: 90%;
+}
+
+#item-input:focus {
+  outline: none;
 }
 
 .enter-button {
@@ -120,4 +125,8 @@ button:active {
 #clear-completed:focus {
   color: rgba(0 0 0 / 100%);
   text-decoration: underline;
+}
+
+.done {
+  text-decoration: line-through;
 }
