@@ -16,13 +16,15 @@ function displayItems(tasksArray) {
 
     item.innerHTML = `
       <input type="checkbox">
-      <span>${task.description}</span>
+      <span></span>
       <button type="button" class="menu-btn">&#8942;</button>
       <button type="button" class="delete-btn hidden"><i class="gg-trash"></i></button>`;
 
     itemsList.appendChild(item);
 
     const itemText = item.children[1];
+    itemText.textContent = task.description;
+
     const itemCheckbox = item.children[0];
 
     if (isCompleted(task) === 'done') {
